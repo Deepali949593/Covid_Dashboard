@@ -1,164 +1,119 @@
-Sure! Below is a **complete `README.md`** file written as **one continuous document**, ideal for GitHub, and includes everything from project summary to deployment and Streamlit usage instructions.
+Certainly! Here's the **updated README** with markdown image embed **code included**, so you can easily insert your screenshots using either local images or hosted URLs:
 
 ---
 
 ```markdown
-# 🦠 COVID-19 Data Dashboard with Streamlit + MongoDB + API
+# COVID-19 Data Dashboard
 
-This project is an interactive, real-time **COVID-19 data dashboard** built using **Streamlit**, **MongoDB**, and the free public API from [disease.sh](https://disease.sh/). It demonstrates full-stack integration of live API data, data storage, analytics, and data visualization, and is fully deployable on [Streamlit Cloud](https://streamlit.io/cloud).
-
----
-
-## 🔗 Live App
-
-▶️ **[Click to open the dashboard](https://coviddashboardgit-9tuegzwr6tuqgbgfxnvipx.streamlit.app)**
+An interactive COVID-19 dashboard built with Python using live API data and MongoDB for data storage and analytics.
 
 ---
 
-## 📌 Features
+## Features
 
-- 🔄 Live COVID-19 data from [disease.sh API](https://disease.sh/docs/)
-- 💾 Stores data in **MongoDB** for offline analysis
-- 📈 Data visualizations using **Plotly**
-- 📊 Tables, graphs, trend charts, and summaries
-- 🧹 Preprocesses, filters, and cleans data before storing
-- ☁️ **Deployable on Streamlit Cloud**
+- Fetches live COVID-19 data from disease.sh API
+- Stores and processes data using MongoDB
+- Visualizes data with Plotly
+- Built with Streamlit for easy UI (runs locally)
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies & Packages Used
 
-- **Frontend/UI**: Streamlit  
-- **Data Source**: [disease.sh API](https://disease.sh)  
-- **Database**: MongoDB using `pymongo`  
-- **Data Analysis**: pandas  
-- **Visualization**: Plotly  
-- **Deployment**: Streamlit Cloud
+- Python 3.x  
+- Streamlit  
+- pandas  
+- requests  
+- pymongo  
+- plotly  
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 
 Grocery-Application/
 ├── covid19\_project/
 │   └── app/
-│       └── covid\_dashboard.py     # Main Streamlit app
-├── requirements.txt               # Python dependencies
-└── README.md                      # Project documentation
+│       └── covid\_dashboard.py       # Main Streamlit app
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project documentation
 
 ````
 
 ---
 
-## 💾 MongoDB Sample Document
+## How to Run Locally
 
-```json
-{
-  "country": "India",
-  "cases": 45000000,
-  "deaths": 530000,
-  "recovered": 44000000,
-  "updated": "2025-06-24T10:00:00Z"
-}
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/Deepali949593/Grocery-Application.git
+   cd Grocery-Application
 ````
 
----
+2. Create and activate virtual environment:
 
-## ⚙️ Getting Started Locally
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate      # Windows
+   # or source venv/bin/activate  # macOS/Linux
+   ```
 
-### 1️⃣ Clone the Repository
+3. Install dependencies:
 
-```bash
-git clone https://github.com/Deepali949593/Grocery-Application.git
-cd Grocery-Application
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 2️⃣ Create & Activate Virtual Environment
+4. Run the app:
 
-```bash
-python -m venv venv
-venv\Scripts\activate      # Windows
-# or source venv/bin/activate (for macOS/Linux)
-```
-
-### 3️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4️⃣ Run the Streamlit App
-
-```bash
-streamlit run covid19_project/app/covid_dashboard.py
-```
-
-The app will open automatically in your browser at `http://localhost:8501`.
+   ```bash
+   streamlit run covid19_project/app/covid_dashboard.py
+   ```
 
 ---
 
-## ☁️ Deploy on Streamlit Cloud
+## Screenshots
 
-To deploy this app publicly:
+### 🖼️ Dashboard View
 
-1. Push your project to GitHub: `https://github.com/Deepali949593/Grocery-Application`
-2. Go to [https://streamlit.io/cloud](https://streamlit.io/cloud)
-3. Fill out the form:
-
-   * **Repository**: `Deepali949593/Grocery-Application`
-   * **Branch**: `main`
-   * **Main file path**: `covid19_project/app/covid_dashboard.py`
-4. (Optional) Set any MongoDB secrets using Streamlit Cloud’s **Secrets Manager**
-5. Click **Deploy**
-
----
-
-## 📦 requirements.txt
-
-Make sure this file exists in the root folder of your project:
-
-```txt
-streamlit
-pandas
-requests
-pymongo
-plotly
+```markdown
+![Dashboard Screenshot](images/dashboard1.png)
 ```
 
-> Add any other libraries your app uses.
+### 📊 Country Statistics
+
+```markdown
+![Country Stats Screenshot](img/ss1.png)
+```
+
+> 📝 Place your images in the `images/` folder inside the project and make sure to commit them to GitHub.
 
 ---
 
-## 📸 Screenshots
-
-> *(Upload your app screenshots to GitHub or another image host and link them here)*
-
-![Dashboard](https://user-images.githubusercontent.com/yourusername/dashboard.png)
-![Country Stats](https://user-images.githubusercontent.com/yourusername/chart.png)
-
----
-
-## 👤 Author
+## Author
 
 **Deepali S.**
 GitHub: [@Deepali949593](https://github.com/Deepali949593)
 
 ---
 
-## 🪪 License
+## License
 
-This project is licensed under the **MIT License**.
+MIT License
 
----
-
-## ❤️ Acknowledgements
-
-* COVID-19 data: [disease.sh API](https://disease.sh/)
-* UI & deployment: [Streamlit](https://streamlit.io)
-* Charting: [Plotly](https://plotly.com/python/)
+```
 
 ---
+
+You can now just place your screenshots at:
+
+```
+
+Grocery-Application/
+├── images/
+│   ├── dashboard1.png
+│   └── dashboard2.png
 
 ```
