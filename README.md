@@ -1,27 +1,4 @@
-Absolutely! Below is your **personalized `README.md`** for your own **COVID-19 Dashboard project**, structured cleanly like your grocery app, with:
 
-* Proper folder structure
-* Image sections (with code to embed screenshots)
-* Local run instructions
-* No Streamlit Cloud (since MongoDB isn’t public)
-
-You can just **replace the screenshot images** inside your `/images/` folder.
-
-## 📸 Screenshots
-
-### 🔹 Dashboard View
-
-![Dashboard Screenshot](img/ss2.png)
-
-
-### 🔹 Country Statistics Section
-
-![Country Stats](img/ss1.png)
-
-
----
-
-```markdown
 # 🦠 COVID-19 Data Dashboard
 
 This is a live **COVID-19 data dashboard** built using:
@@ -45,6 +22,19 @@ The app fetches real-time COVID-19 data from a public API, stores it in MongoDB,
 - Dashboard runs fully offline after data storage
 
 ---
+
+## 📸 Screenshots
+
+### 🔹 Dashboard View
+
+![Dashboard Screenshot](img/ss2.png)
+
+
+### 🔹 Country Statistics Section
+
+![Country Stats](img/ss1.png)
+
+
 
 ## 📁 Folder Structure
 
