@@ -1,0 +1,351 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "pymongo",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "MONGO_URI",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "MONGO_URI = \"mongodb://localhost:27017\"  # Change for Atlas if needed\nclient = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "client = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "db = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "collection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "data = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "df = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "df = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "country",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "country = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "selected",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "selected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "top10",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "top10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "fig",
+        "kind": 5,
+        "importPath": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "description": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "peekOfCode": "fig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app..ipynb_checkpoints.covid_dashboard-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "MONGO_URI",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "MONGO_URI = \"mongodb://localhost:27017\"  # Change for Atlas if needed\nclient = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "client = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "db = client[\"covidDB\"]\ncollection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "collection = db[\"covidData\"]\nst.title(\"🌍 COVID-19 Global Dashboard\")\n# Load data from MongoDB\ndata = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "data = list(collection.find().sort(\"fetchedAt\", -1).limit(200))\ndf = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "df = pd.DataFrame(data)\ndf = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "df = df[[\"country\", \"cases\", \"deaths\", \"recovered\", \"population\"]]\n# Sidebar filter\ncountry = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "country",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "country = st.sidebar.selectbox(\"Select Country\", df[\"country\"].unique())\nselected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "selected",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "selected = df[df[\"country\"] == country].iloc[0]\nst.metric(\"Total Cases\", selected[\"cases\"])\nst.metric(\"Deaths\", selected[\"deaths\"])\nst.metric(\"Recovered\", selected[\"recovered\"])\nst.metric(\"Population\", selected[\"population\"])\n# Show top 10 countries bar chart\ntop10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "top10",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "top10 = df.sort_values(\"cases\", ascending=False).head(10)\nfig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "fig",
+        "kind": 5,
+        "importPath": "app.covid_dashboard",
+        "description": "app.covid_dashboard",
+        "peekOfCode": "fig = px.bar(top10, x=\"cases\", y=\"country\", orientation=\"h\", title=\"Top 10 Countries by Cases\")\nst.plotly_chart(fig, use_container_width=True)",
+        "detail": "app.covid_dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_and_store",
+        "kind": 2,
+        "importPath": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "description": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "peekOfCode": "def fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)\n        print(f\"Inserted {len(data)} records into MongoDB.\")\n    else:",
+        "detail": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "MONGO_URI",
+        "kind": 5,
+        "importPath": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "description": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "peekOfCode": "MONGO_URI = \"mongodb://localhost:27017\"  # Or use your Atlas URI\nclient = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:",
+        "detail": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "description": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "peekOfCode": "client = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()",
+        "detail": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "description": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "peekOfCode": "db = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)",
+        "detail": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "description": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "peekOfCode": "collection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)\n        print(f\"Inserted {len(data)} records into MongoDB.\")",
+        "detail": "scripts..ipynb_checkpoints.fetch_and_store-checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_and_store",
+        "kind": 2,
+        "importPath": "scripts.fetch_and_store",
+        "description": "scripts.fetch_and_store",
+        "peekOfCode": "def fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)\n        print(f\"Inserted {len(data)} records into MongoDB.\")\n    else:",
+        "detail": "scripts.fetch_and_store",
+        "documentation": {}
+    },
+    {
+        "label": "MONGO_URI",
+        "kind": 5,
+        "importPath": "scripts.fetch_and_store",
+        "description": "scripts.fetch_and_store",
+        "peekOfCode": "MONGO_URI = \"mongodb://localhost:27017\"  # Or use your Atlas URI\nclient = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:",
+        "detail": "scripts.fetch_and_store",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "scripts.fetch_and_store",
+        "description": "scripts.fetch_and_store",
+        "peekOfCode": "client = pymongo.MongoClient(MONGO_URI)\ndb = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()",
+        "detail": "scripts.fetch_and_store",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "scripts.fetch_and_store",
+        "description": "scripts.fetch_and_store",
+        "peekOfCode": "db = client[\"covidDB\"]\ncollection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)",
+        "detail": "scripts.fetch_and_store",
+        "documentation": {}
+    },
+    {
+        "label": "collection",
+        "kind": 5,
+        "importPath": "scripts.fetch_and_store",
+        "description": "scripts.fetch_and_store",
+        "peekOfCode": "collection = db[\"covidData\"]\ndef fetch_and_store():\n    url = \"https://disease.sh/v3/covid-19/countries\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        for record in data:\n            record[\"fetchedAt\"] = datetime.utcnow()\n        collection.insert_many(data)\n        print(f\"Inserted {len(data)} records into MongoDB.\")",
+        "detail": "scripts.fetch_and_store",
+        "documentation": {}
+    }
+]
