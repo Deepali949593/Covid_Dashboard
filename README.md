@@ -11,15 +11,12 @@ You can just **replace the screenshot images** inside your `/images/` folder.
 
 ### 🔹 Dashboard View
 
-```markdown
-![Dashboard Screenshot](images/dashboard_view.png)
-```
+![Dashboard Screenshot](img/ss2.png)
+
 
 ### 🔹 Country Statistics Section
 
-```markdown
 ![Country Stats](img/ss1.png)
-```
 
 
 ---
